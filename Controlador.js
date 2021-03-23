@@ -58,7 +58,26 @@ const Controlador = {
 						'tipo': 'adicionar-tarefa',
 						'tarefaNome': document.getElementById('id-tarefa').value
 					});
-				} 
+				} else if (e.target.matches('#ex-nota')) {
+					documento = JSON.stringify({
+						'tipo': 'excluir-tarefa',
+						'tarefaId': e.target.parentElement.parentElement.getElementsByTagName('td')[0].innerHTML
+					});
+				} else if (e.target.matches('#ed-nota')) {
+					documento = JSON.stringify({
+						'tipo': 'editar-tarefa',
+						'tarefaId': e.target.parentElement.parentElement.getElementsByTagName('td')[0].innerHTML,
+						'tarefaNome': document.getElementById('id-tarefa').value
+					});
+				} else if (e.target.matches('.pronta')) {
+					numero = (e.target.innerHTML === 'pendente') ? 1 : 0;
+
+					documento = JSON.stringify({
+						'tipo': 'editar-status',
+						'tarefaStatus': numero,
+						'tarefaId': e.target.parentElement.getElementsByTagName('td')[0].innerHTML
+					});
+				}
 
 				botao = e.target;
 				Controlador.acoesAjax(documento, botao);

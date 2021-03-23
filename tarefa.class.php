@@ -38,6 +38,29 @@ class Tarefa {
 			
 		return $sql->execute();
 	}	
+
+  public function excluirTarefa($id) {
+		$sql = $this->pdo->prepare("DELETE FROM task_list WHERE id_task = :id");	
+		$sql->bindValue(':id', $id);
+
+		return $sql->execute();
+	}
+
+	public function editarTarefa($nome, $id) {
+		$sql = $this->pdo->prepare("UPDATE task_list SET nome = :nome WHERE id_task = :id");
+		$sql->bindValue(':nome', $nome);
+		$sql->bindValue(':id', $id);
+		
+		return $sql->execute(); 
+	}
+
+	public function editarTarefaStatus($sstatus, $id) {
+		$sql = $this->pdo->prepare("UPDATE task_list SET finalizada = :finalizada WHERE id_task = :id");
+		$sql->bindValue(':finalizada', $sstatus);
+		$sql->bindValue(':id', $id);
+		
+		return $sql->execute(); 
+	}
 }
   
 ?>

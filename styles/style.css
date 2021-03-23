@@ -1,0 +1,13 @@
+.pendente { 
+  font-weight: bold;
+  color: #de0000; 
+}
+
+.resolvida { 
+  font-weight: bold;
+  color: #078ad1; 
+}
+
+.resolvida, .pendente:hover { cursor: pointer; }
+
+.thead-light tr, th, td { text-align: center; }

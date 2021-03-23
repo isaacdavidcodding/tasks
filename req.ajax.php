@@ -21,6 +21,19 @@ switch ($tipoRequisicao) {
     $resposta = $tarefa->adicionarTarefa($info['tarefaNome']);
     echo json_encode($resposta);
     break;
-}
 
+  case 'excluir-tarefa':
+    $resposta = $tarefa->excluirTarefa($info['tarefaId']);
+    echo json_encode($resposta);
+    break;
+  
+  case 'editar-tarefa':
+    $resposta = $tarefa->editarTarefa($info['tarefaNome'], $info['tarefaId']);
+    echo json_encode($resposta);
+    break;
+
+  case 'editar-status': 
+    $resposta = $tarefa->editarTarefaStatus($info['tarefaStatus'], $info['tarefaId']);
+    echo json_encode($resposta);
+}
 ?>
