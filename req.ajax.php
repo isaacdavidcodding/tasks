@@ -16,6 +16,11 @@ switch ($tipoRequisicao) {
 		$dados = $tarefa->pegarTarefas();
 		echo json_encode($dados);
 		break;
+
+  case 'adicionar-tarefa':
+    $resposta = $tarefa->adicionarTarefa($info['tarefaNome']);
+    echo json_encode($resposta);
+    break;
 }
 
 ?>

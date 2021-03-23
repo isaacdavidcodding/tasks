@@ -29,6 +29,15 @@ class Tarefa {
 
 		return $retorno;
 	}
+
+  public function adicionarTarefa($nome) {
+		$sql = $this->pdo->prepare("INSERT INTO task_list (nome, dataa, finalizada) VALUES (:nome, :dataa, :finalizada)");
+		$sql->bindValue(':nome', $nome);
+		$sql->bindValue(':dataa', date('Y-m-d H:i:s'));
+		$sql->bindValue(':finalizada', 0);
+			
+		return $sql->execute();
+	}	
 }
   
 ?>

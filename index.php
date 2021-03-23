@@ -41,6 +41,26 @@
     </table>
   </div>
 
+  <!-- Modal para confirmacao -->
+  <div class="modal fade" id="modalConfimacao" tabindex="-1" aria-labelledby="modalConfimacaoLabel" aria-modal="true" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalConfimacaoLabel">Mensagem do sistema</h5>
+          <button type="button" class="close" aria-label="Close">
+            <span id="span-x" aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div id="div-msg" class="modal-body"></div>
+        <div class="modal-footer">
+          <button id="btn-fechar" type="button" class="btn btn-secondary">Fechar</button>
+          <button id="btn-confirma" type="button" class="btn btn-primary">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
+
   <!-- importacao js  -->
   <script src="utilities/mustache.min.js"></script>
   
